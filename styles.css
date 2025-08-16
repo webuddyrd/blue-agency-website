@@ -420,7 +420,7 @@ p {
 #contact {
   max-width: 600px;
   margin: auto;
-  color: var(--text-main);
+  color: var(--text-color);
 }
 
 #contact h2 {
@@ -434,7 +434,7 @@ p {
   border: none;
   padding: 1rem;
   border-radius: 12px;
-  color: var(--text-main);
+  color: var(--text-color, #333);
   box-shadow:
     inset 0 0 8px rgba(255, 255, 255, 0.1);
   transition: box-shadow 0.3s ease;
@@ -469,6 +469,29 @@ p {
   background: var(--accent-color);
   box-shadow: 0 0 20px var(--accent-color);
 }
+
+select {
+  color: var(--text-color, #333);
+  font-size: 1rem;
+  appearance: none;
+  background: var(--bg-light);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow:
+    inset 0 0 8px rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.3s ease;
+  width: 100%;
+  margin-bottom: 1.2rem;
+  resize: vertical;
+  border: 1px solid;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--primary-color, #1161d1);
+  box-shadow: 0 0 0 3px rgba(17, 97, 209, 0.2);
+}
+
 
 /* Fade-in animation for scroll */
 .fade-in {
