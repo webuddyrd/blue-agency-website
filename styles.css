@@ -25,7 +25,7 @@
 }
 
 html {
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -136,6 +136,15 @@ header {
   transform: scale(1.2);
 }
 
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
 /* =========================
    Hero Section Styling
 ========================== */
@@ -158,7 +167,7 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
   z-index: 1;
 }
 
@@ -234,28 +243,29 @@ p {
 }
 
 /* Inner container for content alignment */
-#services > div,
+#services>div,
 .content-wrapper {
   max-width: 1100px;
   margin: 0 auto;
 }
 
 /* Services Cards */
-#services > div {
+#services>div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2.5rem;
+  margin-top: 3rem;
 }
 
-#services > div > div {
+#services>div>div {
   background: var(--bg-light);
   backdrop-filter: saturate(180%) blur(16px);
   border-radius: 30px;
   padding: 2.5rem 3rem;
   box-shadow:
     0 3px 15px rgba(17, 97, 209, 0.2),
-    inset 0 0 0 1px rgba(255,255,255,0.1);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   max-width: 320px;
   color: var(--text-main);
   text-align: center;
@@ -265,11 +275,11 @@ p {
   position: relative;
 }
 
-#services > div > div:hover {
+#services>div>div:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow:
     0 12px 30px rgba(17, 97, 209, 0.4),
-    inset 0 0 0 1px rgba(255,255,255,0.25);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 }
 
 #services img {
@@ -279,9 +289,18 @@ p {
   transition: transform 0.4s ease;
 }
 
-#services > div > div:hover img {
+#services>div>div:hover img {
   transform: scale(1.15) rotate(8deg);
 }
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
 
 /* Portfolio Section */
 .portfolio-section {
@@ -325,11 +344,25 @@ p {
   transform: scale(1);
 }
 
-.float-left   { transform: translateX(-150px); }
-.float-right  { transform: translateX(150px); }
-.float-top    { transform: translateY(-150px); }
-.float-bottom { transform: translateY(150px); }
-.float-center { transform: scale(0.5); }
+.float-left {
+  transform: translateX(-150px);
+}
+
+.float-right {
+  transform: translateX(150px);
+}
+
+.float-top {
+  transform: translateY(-150px);
+}
+
+.float-bottom {
+  transform: translateY(150px);
+}
+
+.float-center {
+  transform: scale(0.5);
+}
 
 .fade-in.visible .float-left,
 .fade-in.visible .float-right,
@@ -339,11 +372,25 @@ p {
   transform: translate(0, 0) scale(1);
 }
 
-.delay-1 { transition-delay: 0.2s; }
-.delay-2 { transition-delay: 0.4s; }
-.delay-3 { transition-delay: 0.6s; }
-.delay-4 { transition-delay: 0.8s; }
-.delay-5 { transition-delay: 1s; }
+.delay-1 {
+  transition-delay: 0.2s;
+}
+
+.delay-2 {
+  transition-delay: 0.4s;
+}
+
+.delay-3 {
+  transition-delay: 0.6s;
+}
+
+.delay-4 {
+  transition-delay: 0.8s;
+}
+
+.delay-5 {
+  transition-delay: 1s;
+}
 
 
 /* Brands Slider */
@@ -359,8 +406,10 @@ p {
 }
 
 .slider-container {
-  overflow: visible; /* allow overflow for zoom */
-  position: relative; /* establish stacking context */
+  overflow: visible;
+  /* allow overflow for zoom */
+  position: relative;
+  /* establish stacking context */
   margin: 3rem 0 6rem 0;
   position: relative;
   user-select: none;
@@ -375,7 +424,8 @@ p {
   width: max-content;
   gap: 2.5rem;
   animation: slide-left 30s linear infinite;
-  overflow: visible; /* prevent clipping inside */
+  overflow: visible;
+  /* prevent clipping inside */
 }
 
 .slider-row.reverse {
@@ -432,6 +482,7 @@ p {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(calc(-50%));
   }
@@ -530,7 +581,13 @@ select:focus {
 
 /* Responsive */
 @media (max-width: 768px) {
-  #services > div {
+
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #services>div {
     flex-direction: column;
     gap: 2rem;
   }
@@ -546,5 +603,37 @@ select:focus {
 
   section {
     padding: 3rem 1rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--bg-light);
+    text-align: center;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

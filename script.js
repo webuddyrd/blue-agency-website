@@ -37,3 +37,23 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.reset();
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  const themeToggle = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+
+  themeToggle.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+    body.classList.toggle("dark-mode");
+
+    const icon = themeToggle.querySelector("i");
+    icon.classList.toggle("fa-sun");
+    icon.classList.toggle("fa-moon");
+  });
+});
