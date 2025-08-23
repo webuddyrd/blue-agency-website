@@ -151,9 +151,7 @@ header {
 
 .hero {
   min-height: 100vh;
-  background:
-    linear-gradient(135deg, rgba(17, 97, 209, 0.8), rgba(17, 97, 209, 0.6)),
-    url("Blue_lg.png") no-repeat center center/cover;
+  background: url("images/bg-2.gif") no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,6 +159,12 @@ header {
   color: white;
   text-align: center;
   padding: 0 1rem;
+}
+
+.hero-image {
+  width: 450px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
 }
 
 .hero::before {
@@ -429,7 +433,7 @@ p {
   width: 140px;
   height: 70px;
   object-fit: contain;
-  background: RGB(241,243,239);
+  background: RGB(241, 243, 239);
   border-radius: 14px;
   padding: 0.5rem;
   box-shadow:
@@ -629,5 +633,72 @@ select:focus {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+}
+
+/* ===== Scroll-Scrub for Portfolio Images (construct on down, reverse on up) ===== */
+.portfolio-section.scrub .img-float {
+  --p: 0;
+  --dx: 0px;
+  --dy: 0px;
+  will-change: transform, opacity, filter;
+  transition: none !important;
+  /* scrubbed by JS */
+  opacity: var(--p);
+  transform:
+    translateX(calc(var(--dx) * (1 - var(--p)))) translateY(calc(var(--dy) * (1 - var(--p)))) scale(calc(0.8 + (0.2 * var(--p))));
+  filter: blur(calc((1 - var(--p)) * 6px));
+}
+
+/* Directional offsets driven by CSS variables for scrub */
+.portfolio-section.scrub .float-left {
+  --dx: -150px;
+  --dy: 0px;
+}
+
+.portfolio-section.scrub .float-right {
+  --dx: 150px;
+  --dy: 0px;
+}
+
+.portfolio-section.scrub .float-top {
+  --dx: 0px;
+  --dy: -150px;
+}
+
+.portfolio-section.scrub .float-bottom {
+  --dx: 0px;
+  --dy: 150px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-section.scrub .img-float {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ===== Scroll-Scrub for Brands (construct on down, reverse on up) ===== */
+.brands-section.scrub .slider-row img {
+  --p: 0;
+  /* progress 0..1 driven by JS */
+  will-change: opacity, filter, transform;
+  transition: none !important;
+  /* JS scrubs it, avoid CSS transitions fighting it */
+  opacity: var(--p);
+  transform: translateY(calc((1 - var(--p)) * 20px)) scale(calc(0.9 + 0.1 * var(--p)));
+  filter: blur(calc((1 - var(--p)) * 4px));
+}
+
+/* Reduced motion: keep everything fully visible */
+@media (prefers-reduced-motion: reduce) {
+  .brands-section.scrub .slider-row img {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
   }
 }
