@@ -43,12 +43,10 @@ body {
 ========================== */
 
 header {
-  background: rgba(10, 15, 40, 0.85);
-  box-shadow: 0 0 30px var(--primary-color);
+  background: transparent;
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: saturate(180%) blur(10px);
 }
 
 .navbar {
@@ -61,7 +59,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0 0 0 2rem;
 }
 
 .logo {
@@ -75,9 +73,15 @@ header {
 }
 
 .nav-links {
+  color: white;
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  background: #fbb040;
+  padding: 1.5rem 2rem;
+  /* space INSIDE the colored area */
+  border-bottom-left-radius: 18px;
+  border-top-left-radius: 18px;
 }
 
 .nav-links a {
@@ -119,6 +123,61 @@ header {
 .nav-links li a:hover {
   color: var(--primary-color);
 }
+
+/* footer - Social links */
+.copyright {
+margin: 0 auto;
+}
+
+.social-links {
+  color: white;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  color: #fbb040;
+}
+
+.social-links a {
+  color: var(--text-main);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color var(--transition-speed);
+  position: relative;
+  padding: 0.3rem 0;
+}
+
+.social-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+}
+
+.social-links a:hover::after {
+  width: 100%;
+}
+
+.social-links li a {
+  color: var(--text-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+  color: var(--primary-color);
+}
+/* Social links */
 
 .social-icons {
   display: flex;
