@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Progress mapping: 0 when section top is near 90% of viewport; 1 when near 35%
     const computeProgress = (rectTop, vh) => {
       const start = vh * 0.80; // begin revealing
-      const end   = vh * 0.15; // fully revealed
+      const end = vh * 0.15; // fully revealed
       return clamp01((start - rectTop) / (start - end));
     };
 
