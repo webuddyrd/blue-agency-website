@@ -42,20 +42,17 @@ body {
    Header & Navigation
 ========================== */
 
-header {
-  background: transparent;
-  position: sticky;
+.site-header.overlay {
+  position: fixed !important;
   top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  box-shadow: none;
   z-index: 1000;
 }
 
 .navbar {
-  /* max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,7 +76,6 @@ header {
   gap: 1.5rem;
   background: #fbb040;
   padding: 1.5rem 2rem;
-  /* space INSIDE the colored area */
   border-bottom-left-radius: 18px;
   border-top-left-radius: 18px;
 }
@@ -126,7 +122,7 @@ header {
 
 /* footer - Social links */
 .copyright {
-margin: 0 auto;
+  margin: 0 auto;
 }
 
 .social-links {
@@ -177,6 +173,7 @@ margin: 0 auto;
 .social-links li a:hover {
   color: var(--primary-color);
 }
+
 /* Social links */
 
 .social-icons {
@@ -546,9 +543,19 @@ p {
 
 /* Contact Form */
 #contact {
-  max-width: 600px;
+  /* max-width: 600px;
+  margin: auto;
+  color: var(--text-color); */
+  justify-content: center;
+  display: flex;
+  gap: 10rem;
+  /* max-width: 1372px; */
   margin: auto;
   color: var(--text-color);
+}
+
+#contact div {
+  max-width: 600px;
 }
 
 #contact h2 {
