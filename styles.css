@@ -10,8 +10,6 @@
   --text-main: #e4e9f7;
   --text-secondary: #a0a8c5;
   --shadow-glow: 0 0 15px var(--primary-color);
-  --font-heading: 'Poppins', sans-serif;
-  --font-body: 'Poppins', sans-serif;
   --transition-speed: 0.4s;
 }
 
@@ -20,6 +18,21 @@
 *::after {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'Gotham Rounded';
+  src: url('fonts/gothamrnd_book.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham Rounded';
+  src: url('fonts/gothamrnd_bold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -32,6 +45,7 @@ body {
   line-height: 1.6;
   scroll-behavior: smooth;
   transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: 'Gotham Rounded';
 }
 
 /* =========================
@@ -50,7 +64,7 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0 0 0 2rem;
 }
@@ -66,11 +80,10 @@ body {
 }
 
 .nav-links {
-  color: white;
+  color: black;
   list-style: none;
   display: flex;
   gap: 1.5rem;
-  background: #fbb040;
   padding: 1.5rem 2rem;
   border-bottom-left-radius: 18px;
   border-top-left-radius: 18px;
@@ -78,7 +91,6 @@ body {
 
 .nav-links a {
   color: var(--text-main);
-  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   transition: color var(--transition-speed);
@@ -107,7 +119,6 @@ body {
 
 .nav-links li a {
   color: var(--text-color);
-  font-weight: 600;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -202,9 +213,9 @@ body {
 ========================== */
 
 .hero {
-  min-height: 100vh;
-  background: url("images/bg-2.gif") no-repeat center center/cover;
+  /* min-height: 100vh; */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -215,7 +226,7 @@ body {
 
 .hero-image {
   width: 450px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255);
   border-radius: 20px;
 }
 
@@ -223,7 +234,6 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
   z-index: 1;
 }
 
@@ -231,29 +241,6 @@ body {
   position: relative;
   z-index: 2;
   max-width: 900px;
-}
-
-.hero .btn {
-  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
-  color: white;
-  padding: 1rem 2rem;
-  font-weight: 700;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  box-shadow: 0 0 15px var(--primary-color);
-  transition: all 0.3s ease;
-  display: inline-block;
-  user-select: none;
-  margin-top: 2rem;
-}
-
-.hero .btn:hover {
-  filter: brightness(1.15);
-  box-shadow:
-    0 0 8px var(--accent-color),
-    0 0 20px var(--primary-color);
-  transform: scale(1.05);
 }
 
 /* =========================
@@ -275,7 +262,7 @@ section {
 h2 {
   max-width: 1100px;
   margin: 0 auto 1rem auto;
-  font-family: var(--font-heading);
+  font-family: 'Gotham Rounded';
   font-weight: 800;
   font-size: 2.5rem;
   text-transform: uppercase;

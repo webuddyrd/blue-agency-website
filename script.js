@@ -92,6 +92,12 @@ document.addEventListener("DOMContentLoaded", () => {
       contactForm.reset();
     });
   }
+
+  const heroVideo = document.getElementById("hero-video");
+  const heroFlag = document.getElementById("hero-flag");
+
+  heroVideo.playbackRate = 0.5;
+  heroFlag.playbackRate = 0.5;
 });
 
 // ===== Brands scroll-scrub (construct on down, reverse on up) =====

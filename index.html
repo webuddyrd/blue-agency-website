@@ -7,7 +7,6 @@
   <title>Blue Agencia Digital</title>
   <link rel="icon" href="Blue_sm.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script defer src="script.js"></script>
@@ -16,9 +15,6 @@
 <body>
   <header class="site-header overlay">
     <nav class="navbar">
-      <a href="#home">
-        <img src="Blue_sm.png" alt="Webuddy Logo" class="logo" />
-      </a>
       <ul class="nav-links">
         <li><a href="#services">Nosotros</a></li>
         <li><a href="#portfolio">Nuestro Trabajo</a></li>
@@ -30,10 +26,12 @@
   </header>
 
   <section id="home" class="hero fade-in">
-    <div class="content">
-      <!-- <a href="#contact" class="btn">Cotiza con nosotros</a> -->
-      <img src="Blue_lg.png" alt="Webuddy Logo" class="hero-image" />
-    </div>
+    <video id="hero-video" autoplay loop muted>
+      <source src="images/1.mp4" type="video/mp4">
+    </video>
+    <video id="hero-flag" autoplay loop muted>
+      <source src="images/1-2.mp4" type="video/mp4">
+    </video>
   </section>
 
   <section id="services" class="fade-in">
