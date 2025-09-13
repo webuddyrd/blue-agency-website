@@ -167,3 +167,27 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 
 observer.observe(usSection);
+
+
+// SERVICE SECTION LOGIC
+const wrapper = document.getElementById("servicesWrapper");
+const overlayImg = document.getElementById("overlayImg");
+
+window.addEventListener("scroll", () => {
+  const windowHeight = window.innerHeight;
+  const wrapperTop = wrapper.offsetTop;
+  const wrapperHeight = wrapper.offsetHeight;
+
+  // How much we've scrolled inside the wrapper
+  let scrollInside = window.scrollY - wrapperTop;
+
+  // Clamp to 0–(wrapperHeight - viewportHeight)
+  let maxScroll = wrapperHeight - windowHeight;
+  scrollInside = Math.min(Math.max(scrollInside, 0), maxScroll);
+
+  // Normalize to 0–1
+  let progress = scrollInside / maxScroll;
+
+  // Move overlay fully from hidden → cover
+  overlayImg.style.transform = `translateY(${100 - progress * 200}%)`;
+});

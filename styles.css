@@ -251,7 +251,6 @@ section {
   width: 100vw;
   max-width: none;
   margin: 0;
-  padding: 4rem 2rem;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
@@ -343,6 +342,103 @@ p {
 }
 
 /* US SECTION STYLE */
+
+/* NEW SERVICES SECTION */
+
+/* ===== SLIDER STRIPS ===== */
+.services-slider-container {
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-services {
+  position: relative;
+  width: 100%;
+  /* wider for animation loop */
+  display: flex;
+}
+
+.slider-services img {
+  width: auto;
+  height: 70px;
+  margin-right: 40px;
+}
+
+/* Top row → scroll left */
+.top-row {
+  animation: slideLeft 20s linear infinite;
+}
+
+/* Bottom row → scroll right */
+.bottom-row {
+  animation: slideRight 20s linear infinite;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Center floating badge */
+.to-know {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.to-know img {
+  width: 500px;
+  height: auto;
+}
+
+/* ===== CONTENT BLOCKS ===== */
+.content-wrapper {
+  position: relative;
+  height: 200vh; /* gives ~2 screens for the animation */
+}
+
+.content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 50px;
+}
+/* Ensure 5.1 always fills and sits behind */
+.content .img-5-1 {
+  z-index: 1;
+  transform: translateY(0); /* fix cut issue */
+}
+
+/* Ensure 5.2 starts fully hidden below */
+.content .img-5-2 {
+  z-index: 2;
+  transform: translateY(100%); /* start off-canvas */
+}
+
+/* UNTIL HERE NEW SERVICES SECTION */
 
 #services>div,
 .content-wrapper {
