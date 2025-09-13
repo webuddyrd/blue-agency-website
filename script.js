@@ -149,3 +149,21 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", onScrollResize, { passive: true });
 })();
 
+//Observer to trigger animations in US SECTION
+const usSection = document.querySelector('.us');
+const badges = usSection.querySelectorAll('.badge');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      usSection.classList.add('active');
+      badges.forEach(badge => badge.classList.add('show'));
+    } else {
+      // Reset when leaving → hide all instantly
+      usSection.classList.remove('active');
+      badges.forEach(badge => badge.classList.remove('show'));
+    }
+  });
+}, { threshold: 0.3 });
+
+observer.observe(usSection);
