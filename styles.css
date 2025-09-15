@@ -1,7 +1,6 @@
 /* =========================
    Variables & Base Styles
 ========================== */
-
 :root {
   --primary-color: #2a77bc;
   --accent-color: #fbb040;
@@ -33,7 +32,6 @@
   font-style: normal;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -49,9 +47,8 @@ body {
 }
 
 /* =========================
-   Header & Navigation
+   HEADER & AND NAVIGATION
 ========================== */
-
 .site-header.overlay {
   position: fixed !important;
   top: 0;
@@ -69,16 +66,6 @@ body {
   padding: 0 0 0 2rem;
 }
 
-.logo {
-  height: 45px;
-  filter: drop-shadow(0 0 4px var(--primary-color));
-  transition: transform var(--transition-speed);
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
-
 .nav-links {
   color: black;
   list-style: none;
@@ -90,44 +77,32 @@ body {
 }
 
 .nav-links a {
-  color: var(--text-main);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  transition: color var(--transition-speed);
-  position: relative;
-  padding: 0.3rem 0;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background: #2a77bc;
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #2a77bc;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-.nav-links li a {
-  color: var(--text-color);
   text-decoration: none;
-  transition: color 0.3s ease;
+  color: black;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  outline: 2px solid #f4a33c;
+  outline-offset: -6px;
+  background-color: white;
+  transition: all 0.3s ease;
+
 }
 
-.nav-links li a:hover {
-  color: var(--primary-color);
+.nav-links a.active {
+  background-color: #f4a33c;
+  /* orange pill */
+  color: white;
+  outline: 2px solid white;
+  outline-offset: -4px;
 }
 
-/* footer - Social links */
+/* =========================
+   END OF HEADER & NAVIGATION
+========================== */
+
+/* =========================
+   FOOTER & SOCIAL LINKS
+========================== */
 .copyright {
   margin: 0 auto;
 }
@@ -181,8 +156,6 @@ body {
   color: var(--primary-color);
 }
 
-/* Social links */
-
 .social-icons {
   display: flex;
   gap: 1rem;
@@ -209,11 +182,13 @@ body {
 }
 
 /* =========================
-   Hero Section Styling
+   END OF FOOTER & SOCIAL LINKS
 ========================== */
 
+/* =========================
+   HERO SECTION STYLING
+========================== */
 .hero {
-  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -224,12 +199,6 @@ body {
   padding: 0 1rem;
 }
 
-.hero-image {
-  width: 450px;
-  background: rgba(255, 255, 255);
-  border-radius: 20px;
-}
-
 .hero::before {
   content: "";
   position: absolute;
@@ -237,16 +206,13 @@ body {
   z-index: 1;
 }
 
-.hero .content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-}
-
 /* =========================
-   Section Base Styles - full width & minimal division
+   END OF HERO SECTION STYLING
 ========================== */
 
+/* =========================
+  SECTION BASE STYLES
+========================== */
 section {
   width: 100vw;
   max-width: none;
@@ -280,9 +246,14 @@ p {
   user-select: text;
 }
 
-/* US SECTION STYLE */
+/* =========================
+   END OF SECTION BASE STYLES
+========================== */
+
+/* =========================
+   US SECTION
+========================== */
 .us {
-  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -293,26 +264,12 @@ p {
   padding: 0 1rem;
 }
 
-/* .us::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-} */
-
-.bg-text {
-  width: 100%;
-  display: block;
-}
-
-/* Badges overlay */
 .badge {
   position: absolute;
   width: auto;
   opacity: 0;
   transform: scale(0.8);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  /* animation: fadeIn 0.8s ease forwards; */
 }
 
 .badge.show {
@@ -320,39 +277,32 @@ p {
   transform: scale(1);
 }
 
-
-/* Position each badge manually */
 .us.active .badge-effective {
-  bottom: 22%;
+  bottom: 61%;
   right: 22%;
   transition-delay: 1s;
 }
 
 .us.active .badge-realists {
-  top: 52%;
+  top: 26%;
   left: 15%;
   transition-delay: 3s;
 }
 
 .us.active .badge-utils {
-  top: 21%;
+  top: 10%;
   right: 20%;
   transform: rotate(5deg);
   transition-delay: 2s;
 }
 
-/* US SECTION STYLE */
+/* =========================
+   END OF US SECTION
+========================== */
 
-/* NEW SERVICES SECTION */
-
-.service-content-wrapper {
-  position: sticky;
-  top: 0;
-  height: 150vh;
-  overflow: hidden;
-}
-
-/* ===== SLIDER STRIPS ===== */
+/* =========================
+   SERVICES SECTION
+========================== */
 .services-slider-container {
   position: relative;
   width: 100%;
@@ -366,7 +316,6 @@ p {
 .slider-services {
   position: relative;
   width: 100%;
-  /* wider for animation loop */
   display: flex;
 }
 
@@ -376,12 +325,10 @@ p {
   margin-right: 40px;
 }
 
-/* Top row → scroll left */
 .top-row {
   animation: slideLeft 20s linear infinite;
 }
 
-/* Bottom row → scroll right */
 .bottom-row {
   animation: slideRight 20s linear infinite;
 }
@@ -406,7 +353,6 @@ p {
   }
 }
 
-/* Center floating badge */
 .to-know {
   position: absolute;
   top: 14%;
@@ -424,7 +370,6 @@ p {
 .content-wrapper {
   position: relative;
   height: 150vh;
-  /* gives ~2 screens for the animation */
 }
 
 .content {
@@ -443,34 +388,32 @@ p {
   padding-top: 25px;
 }
 
-/* Ensure 5.1 always fills and sits behind */
 .content .img-5-1 {
   width: 50%;
 }
 
-/* Ensure 5.2 starts fully hidden below */
 .content .img-5-2 {
   z-index: 2;
   transform: translateY(100%);
-  /* start off-canvas */
   height: 100%;
   width: 50%;
 }
 
-/* UNTIL HERE NEW SERVICES SECTION */
+/* =========================
+   END OF SERVICES SECTION
+========================== */
 
-/* NEW PORTFOLIO SECTION */
+/* =========================
+   PORTFOLIO SECTION
+========================== */
 #portfolio {
   position: relative;
-  /* section styles here */
 }
 
 #portfolio .sticky-header {
   position: sticky;
   top: 0;
-  /* sticks to the top of viewport */
   z-index: 5;
-  /* keep above other content */
   width: 100%;
   height: auto;
 }
@@ -481,223 +424,11 @@ p {
   align-self: center;
   justify-self: center;
   display: flex;
-
-}
-/* UNTIL HERE NEW PORTFOLIO SECTION */
-
-/* Services Cards */
-#services>div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2.5rem;
-  margin-top: 3rem;
 }
 
-#services>div>div {
-  background: var(--bg-light);
-  backdrop-filter: saturate(180%) blur(16px);
-  border-radius: 30px;
-  padding: 2.5rem 3rem;
-  box-shadow:
-    0 3px 15px rgba(17, 97, 209, 0.2),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-  max-width: 320px;
-  color: var(--text-main);
-  text-align: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  cursor: default;
-  user-select: none;
-  position: relative;
-}
-
-#services>div>div:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow:
-    0 12px 30px rgba(17, 97, 209, 0.4),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.25);
-}
-
-#services img {
-  width: 60px;
-  margin-bottom: 1.5rem;
-  filter: drop-shadow(0 0 6px var(--accent-color));
-  transition: transform 0.4s ease;
-}
-
-#services>div>div:hover img {
-  transform: scale(1.15) rotate(8deg);
-}
-
-.services-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-/* Portfolio Section */
-.portfolio-section {
-  padding: 6rem 2rem;
-  position: relative;
-  text-align: center;
-  background: var(--bg-dark);
-  overflow: hidden;
-}
-
-.portfolio-intro {
-  max-width: 700px;
-  margin: 0 auto 3rem;
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-}
-
-.portfolio-gallery {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.img-float {
-  border-radius: 20px;
-  object-fit: cover;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: all 1s ease;
-  position: relative;
-  z-index: 2;
-}
-
-.fade-in.visible .img-float {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.float-left {
-  transform: translateX(-150px);
-}
-
-.float-right {
-  transform: translateX(150px);
-}
-
-.float-top {
-  transform: translateY(-150px);
-}
-
-.float-bottom {
-  transform: translateY(150px);
-}
-
-.float-center {
-  transform: scale(0.5);
-}
-
-.fade-in.visible .float-left,
-.fade-in.visible .float-right,
-.fade-in.visible .float-top,
-.fade-in.visible .float-bottom,
-.fade-in.visible .float-center {
-  transform: translate(0, 0) scale(1);
-}
-
-.delay-1 {
-  transition-delay: 0.2s;
-}
-
-.delay-2 {
-  transition-delay: 0.4s;
-}
-
-.delay-3 {
-  transition-delay: 0.6s;
-}
-
-.delay-4 {
-  transition-delay: 0.8s;
-}
-
-.delay-5 {
-  transition-delay: 1s;
-}
-
-/* Brands Slider */
-#brands h2 {
-  color: white;
-}
-
-.slider-container {
-  overflow: visible;
-  position: relative;
-  margin: 3rem 0 6rem 0;
-  position: relative;
-  user-select: none;
-  width: 100vw;
-  max-width: 100vw;
-  padding: 0 2rem;
-  box-sizing: border-box;
-}
-
-.slider-row {
-  display: flex;
-  width: max-content;
-  gap: 2.5rem;
-  animation: slide-left 30s linear infinite;
-  overflow: visible;
-}
-
-.slider-row.reverse {
-  animation-direction: reverse;
-}
-
-.slider-row img {
-  width: 140px;
-  height: 70px;
-  object-fit: contain;
-  background: RGB(241, 243, 239);
-  border-radius: 14px;
-  padding: 0.5rem;
-  box-shadow:
-    0 3px 15px rgba(255 255 255 / 0.15),
-    inset 0 0 0 1px rgba(255 255 255 / 0.2);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  z-index: 1;
-  flex-shrink: 0;
-}
-
-.slider-row img:hover {
-  transform: scale(1.2);
-  box-shadow:
-    0 10px 30px rgba(17, 97, 209, 0.8),
-    inset 0 0 0 2px rgba(255, 255, 255, 0.4);
-  z-index: 10;
-}
-
-/* ===== Brands Section Background and Divider ===== */
-.brands-section {
-  background: linear-gradient(to right, #263c86, #2a77bc, #62c2ee);
-  ;
-  padding: 6rem 2rem 4rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.brands-section::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: var(--bg-dark);
-  clip-path: polygon(0 100%, 100% 0, 100% 100%);
-  z-index: 2;
-}
+/* =========================
+   END OF PORTFOLIO SECTION
+========================== */
 
 @keyframes slide-left {
   0% {
@@ -721,89 +452,6 @@ p {
   }
 }
 
-/* Contact Form */
-#contact {
-  justify-content: center;
-  display: flex;
-  gap: 10rem;
-  margin: auto;
-  color: var(--text-color);
-}
-
-#contact div {
-  max-width: 600px;
-}
-
-#contact h2 {
-  color: var(--primary-color);
-  margin-bottom: 2rem;
-}
-
-#contact input,
-#contact textarea {
-  background: var(--bg-light);
-  border: none;
-  padding: 1rem;
-  border-radius: 12px;
-  color: var(--text-color, #333);
-  box-shadow:
-    inset 0 0 8px rgba(255, 255, 255, 0.1);
-  transition: box-shadow 0.3s ease;
-  width: 100%;
-  margin-bottom: 1.2rem;
-  resize: vertical;
-  border: 1px solid;
-}
-
-#contact input:focus,
-#contact textarea:focus {
-  outline: none;
-  box-shadow:
-    0 0 12px var(--primary-color);
-}
-
-#contact button {
-  background: linear-gradient(to right, #263c86, #2a77bc, #62c2ee);
-  border: none;
-  color: white;
-  padding: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  box-shadow: 0 0 12px var(--primary-color);
-  width: 100%;
-}
-
-#contact button:hover {
-  background: var(--accent-color);
-  box-shadow: 0 0 20px var(--accent-color);
-}
-
-select {
-  color: var(--text-color, #333);
-  font-size: 1rem;
-  appearance: none;
-  background: var(--bg-light);
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow:
-    inset 0 0 8px rgba(255, 255, 255, 0.1);
-  transition: box-shadow 0.3s ease;
-  width: 100%;
-  margin-bottom: 1.2rem;
-  resize: vertical;
-  border: 1px solid;
-}
-
-select:focus {
-  outline: none;
-  border-color: var(--primary-color, #1161d1);
-  box-shadow: 0 0 0 3px rgba(17, 97, 209, 0.2);
-}
-
-/* Fade-in animation for scroll */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -819,24 +467,9 @@ select:focus {
 
 /* Responsive */
 @media (max-width: 768px) {
-
-  .services-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #services>div {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
   .slider-row img {
     width: 100px;
     height: 50px;
-  }
-
-  .portfolio-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
   section {
@@ -874,72 +507,5 @@ select:focus {
       opacity: 1;
       transform: translateY(0);
     }
-  }
-}
-
-/* ===== Scroll-Scrub for Portfolio Images (construct on down, reverse on up) ===== */
-.portfolio-section.scrub .img-float {
-  --p: 0;
-  --dx: 0px;
-  --dy: 0px;
-  will-change: transform, opacity, filter;
-  transition: none !important;
-  /* scrubbed by JS */
-  opacity: var(--p);
-  transform:
-    translateX(calc(var(--dx) * (1 - var(--p)))) translateY(calc(var(--dy) * (1 - var(--p)))) scale(calc(0.8 + (0.2 * var(--p))));
-  filter: blur(calc((1 - var(--p)) * 6px));
-}
-
-/* Directional offsets driven by CSS variables for scrub */
-.portfolio-section.scrub .float-left {
-  --dx: -150px;
-  --dy: 0px;
-}
-
-.portfolio-section.scrub .float-right {
-  --dx: 150px;
-  --dy: 0px;
-}
-
-.portfolio-section.scrub .float-top {
-  --dx: 0px;
-  --dy: -150px;
-}
-
-.portfolio-section.scrub .float-bottom {
-  --dx: 0px;
-  --dy: 150px;
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .portfolio-section.scrub .img-float {
-    transition: none !important;
-    transform: none !important;
-    filter: none !important;
-    opacity: 1 !important;
-  }
-}
-
-/* ===== Scroll-Scrub for Brands (construct on down, reverse on up) ===== */
-.brands-section.scrub .slider-row img {
-  --p: 0;
-  /* progress 0..1 driven by JS */
-  will-change: opacity, filter, transform;
-  transition: none !important;
-  /* JS scrubs it, avoid CSS transitions fighting it */
-  opacity: var(--p);
-  transform: translateY(calc((1 - var(--p)) * 20px)) scale(calc(0.9 + 0.1 * var(--p)));
-  filter: blur(calc((1 - var(--p)) * 4px));
-}
-
-/* Reduced motion: keep everything fully visible */
-@media (prefers-reduced-motion: reduce) {
-  .brands-section.scrub .slider-row img {
-    transition: none !important;
-    transform: none !important;
-    filter: none !important;
-    opacity: 1 !important;
   }
 }
