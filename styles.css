@@ -423,7 +423,8 @@ p {
 /* ===== CONTENT BLOCKS ===== */
 .content-wrapper {
   position: relative;
-  height: 150vh; /* gives ~2 screens for the animation */
+  height: 150vh;
+  /* gives ~2 screens for the animation */
 }
 
 .content {
@@ -444,18 +445,45 @@ p {
 
 /* Ensure 5.1 always fills and sits behind */
 .content .img-5-1 {
- width: 50%;
+  width: 50%;
 }
 
 /* Ensure 5.2 starts fully hidden below */
 .content .img-5-2 {
   z-index: 2;
-  transform: translateY(100%); /* start off-canvas */
+  transform: translateY(100%);
+  /* start off-canvas */
   height: 100%;
   width: 50%;
 }
 
 /* UNTIL HERE NEW SERVICES SECTION */
+
+/* NEW PORTFOLIO SECTION */
+#portfolio {
+  position: relative;
+  /* section styles here */
+}
+
+#portfolio .sticky-header {
+  position: sticky;
+  top: 0;
+  /* sticks to the top of viewport */
+  z-index: 5;
+  /* keep above other content */
+  width: 100%;
+  height: auto;
+}
+
+#portfolio .sticky-header img {
+  padding-top: 80px;
+  width: 40%;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+
+}
+/* UNTIL HERE NEW PORTFOLIO SECTION */
 
 /* Services Cards */
 #services>div {
