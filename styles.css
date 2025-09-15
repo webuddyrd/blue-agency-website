@@ -345,6 +345,13 @@ p {
 
 /* NEW SERVICES SECTION */
 
+.service-content-wrapper {
+  position: sticky;
+  top: 0;
+  height: 150vh;
+  overflow: hidden;
+}
+
 /* ===== SLIDER STRIPS ===== */
 .services-slider-container {
   position: relative;
@@ -402,7 +409,7 @@ p {
 /* Center floating badge */
 .to-know {
   position: absolute;
-  top: 55%;
+  top: 14%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
@@ -416,35 +423,39 @@ p {
 /* ===== CONTENT BLOCKS ===== */
 .content-wrapper {
   position: relative;
-  height: 200vh; /* gives ~2 screens for the animation */
+  height: 150vh; /* gives ~2 screens for the animation */
 }
 
 .content {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 95vh;
   overflow: hidden;
-  padding-top: 50px;
+  padding-top: 20px;
 }
+
+.services-images-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+}
+
 /* Ensure 5.1 always fills and sits behind */
 .content .img-5-1 {
-  z-index: 1;
-  transform: translateY(0); /* fix cut issue */
+ width: 50%;
 }
 
 /* Ensure 5.2 starts fully hidden below */
 .content .img-5-2 {
   z-index: 2;
   transform: translateY(100%); /* start off-canvas */
+  height: 100%;
+  width: 50%;
 }
 
 /* UNTIL HERE NEW SERVICES SECTION */
-
-#services>div,
-.content-wrapper {
-  max-width: 1100px;
-  margin: 0 auto;
-}
 
 /* Services Cards */
 #services>div {
