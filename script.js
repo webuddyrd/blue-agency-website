@@ -73,31 +73,25 @@ window.addEventListener("scroll", () => {
 ========================== */
 
 /* =========================
-   ACTIVE NAV LINK LOGIC
+   CHANGE STYLE ON USIMAGE SECTION
 ========================== */
-// Grab all nav links and sections
-const navLinks = document.querySelectorAll("nav a");
-const sections = document.querySelectorAll("section");
+const navbar = document.getElementById("nav");
+const imagesContainer = document.getElementById("usImages");
 
-// Create an observer
-const activeNavLinkObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Remove .active from all links
-      navLinks.forEach(link => link.classList.remove("active"));
+window.addEventListener("scroll", () => {
+  const navRect = navbar.getBoundingClientRect();
+  const sectionRect = imagesContainer.getBoundingClientRect();
 
-      // Highlight the matching nav link
-      const id = entry.target.getAttribute("id");
-      const activeLink = document.querySelector(`nav a[href="#${id}"]`);
-      if (activeLink) activeLink.classList.add("active");
-    }
-  });
-}, {
-  threshold: 0.6 // section must be at least 60% visible
+   // Navbar fully inside blue section
+  const isInside =
+    navRect.top >= sectionRect.top && navRect.bottom <= sectionRect.bottom;
+
+  if (isInside) {
+    navbar.classList.add("contrast");   // white text
+  } else {
+    navbar.classList.remove("contrast"); // black text
+  }
 });
-
-// Observe each section
-sections.forEach(section => activeNavLinkObserver.observe(section));
 /* =========================
-   END OF ACTIVE NAV LINK LOGIC
+   END OF CHANGE STYLE ON USIMAGE SECTION
 ========================== */

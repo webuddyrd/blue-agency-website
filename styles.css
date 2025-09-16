@@ -78,22 +78,12 @@ body {
 
 .nav-links a {
   text-decoration: none;
+  font-size: 24px;
   color: black;
-  padding: 15px 30px;
-  border-radius: 50%;
-  outline: 2px solid #f4a33c;
-  outline-offset: -6px;
-  background-color: white;
-  transition: all 0.3s ease;
-
 }
 
-.nav-links a.active {
-  background-color: #f4a33c;
-  /* orange pill */
+.nav-links.contrast a {
   color: white;
-  outline: 2px solid white;
-  outline-offset: -4px;
 }
 
 /* =========================
@@ -294,6 +284,11 @@ p {
   right: 20%;
   transform: rotate(5deg);
   transition-delay: 2s;
+}
+
+.us-second {
+  height: 100vh;
+  margin-top: 95px;
 }
 
 /* =========================
