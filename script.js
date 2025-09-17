@@ -52,7 +52,7 @@ const overlayImg = document.getElementById("overlayImg");
 const imageToOverlay = document.getElementById("imageToOverlay");
 
 window.addEventListener("scroll", () => {
-  const windowHeight = window.innerHeight;
+  const windowHeight = window.innerHeight  + 150;
   const wrapperTop = wrapper.offsetTop;
   const wrapperHeight = wrapper.offsetHeight;
 
