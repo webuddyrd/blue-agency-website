@@ -9,7 +9,17 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script defer src="script.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "YXwDmKOCeIPV4mOiC",
+      });
+    })();
+  </script>
 </head>
 
 <body>
@@ -188,27 +198,28 @@
           <img src="images/8Title.png">
         </div>
 
-        <form class="contact-form">
-          <input type="text" placeholder="Nombre y apellido" required>
-          <input type="tel" placeholder="Teléfono" required>
-          <input type="email" placeholder="Correo electrónico" required>
-          <select required>
+        <form id="contact-form" class="contact-form">
+          <input name="name" type="text" placeholder="Nombre y apellido" required>
+          <input name="phone" type="tel" placeholder="Teléfono" required>
+          <input name="email" type="email" placeholder="Correo electrónico" required>
+          <select name="service" required>
             <option value="">Selecciona un servicio</option>
-            <option value="branding">Producción de videos</option>
-            <option value="web">Cobertura de eventos</option>
-            <option value="seo">Cobertura relaciones públicas</option>
-            <option value="social">Creación y ejecución de planes de marketing</option>
-            <option value="ads">Sesiones fotográficas</option>
-            <option value="branding">Nota de prensa</option>
-            <option value="web">SEO</option>
-            <option value="seo">Promoción pagada</option>
-            <option value="social">Media marketing (Offline y Online)</option>
-            <option value="ads">Ejecutión de planes estratégicos</option>
-            <option value="branding">Influencer marketing</option>
-            <option value="web">Manejo de redes sociales</option>
-            <option value="seo">Desarrollo de contenido</option>
+            <option value="Producción de videos">Producción de videos</option>
+            <option value="Cobertura de eventos">Cobertura de eventos</option>
+            <option value="Cobertura relaciones públicas">Cobertura relaciones públicas</option>
+            <option value="Creación y ejecución de planes de marketing">Creación y ejecución de planes de marketing
+            </option>
+            <option value="Sesiones fotográficas">Sesiones fotográficas</option>
+            <option value="Nota de prensa">Nota de prensa</option>
+            <option value="SEO">SEO</option>
+            <option value="Promoción pagada">Promoción pagada</option>
+            <option value="Media marketing (Offline y Online)">Media marketing (Offline y Online)</option>
+            <option value="Ejecutión de planes estratégicos">Ejecutión de planes estratégicos</option>
+            <option value="Influencer marketing">Influencer marketing</option>
+            <option value="Manejo de redes sociales">Manejo de redes sociales</option>
+            <option value="Desarrollo de contenido">Desarrollo de contenido</option>
           </select>
-          <textarea placeholder="Mensaje"></textarea>
+          <textarea name="message" placeholder="Mensaje"></textarea>
           <button type="submit"><img src="images/8Button.png"></button>
         </form>
       </div>
