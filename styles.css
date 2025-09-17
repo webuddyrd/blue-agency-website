@@ -404,6 +404,12 @@ p {
   position: relative;
 }
 
+.portfolio-content {
+  display: flex;
+  flex-direction: column;
+  gap: 250px;
+}
+
 #portfolio .sticky-header {
   position: sticky;
   top: 0;
@@ -414,7 +420,7 @@ p {
 
 #portfolio .sticky-header img {
   padding-top: 80px;
-  width: 40%;
+  width: 30%;
   align-self: center;
   justify-self: center;
   display: flex;
