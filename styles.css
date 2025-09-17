@@ -301,7 +301,7 @@ p {
 .services-slider-container {
   position: relative;
   width: 100%;
-  height: 20vh;
+  height: 15vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -315,8 +315,7 @@ p {
 }
 
 .slider-services img {
-  width: auto;
-  height: 70px;
+  height: 47px;
   margin-right: 40px;
 }
 
@@ -350,14 +349,14 @@ p {
 
 .to-know {
   position: absolute;
-  top: 14%;
+  top: 11%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
 }
 
 .to-know img {
-  width: 500px;
+  width: 420px;
   height: auto;
 }
 
@@ -369,7 +368,7 @@ p {
 
 .content {
   position: sticky;
-  top: 0;
+  top: 70px;
   height: 95vh;
   overflow: hidden;
   padding-top: 20px;
