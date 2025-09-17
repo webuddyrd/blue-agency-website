@@ -49,25 +49,38 @@ usSectionObserver.observe(usSection);
 ========================== */
 const wrapper = document.getElementById("services");
 const overlayImg = document.getElementById("overlayImg");
+const imageToOverlay = document.getElementById("imageToOverlay");
 
 window.addEventListener("scroll", () => {
   const windowHeight = window.innerHeight;
   const wrapperTop = wrapper.offsetTop;
   const wrapperHeight = wrapper.offsetHeight;
 
-  // How much we've scrolled inside the wrapper
+  // Scroll distance inside wrapper
   let scrollInside = window.scrollY - wrapperTop;
-
-  // Clamp to 0–(wrapperHeight - viewportHeight)
   let maxScroll = wrapperHeight - windowHeight;
   scrollInside = Math.min(Math.max(scrollInside, 0), maxScroll);
 
-  // Normalize to 0–1
+  // Normalize progress 0 → 1
   let progress = scrollInside / maxScroll;
 
-  // Move overlay fully from hidden → cover
-  overlayImg.style.transform = `translateY(${100 - progress * 200}%)`;
+  // ---- Stage 1: Move 5.1 upward until it sticks ----
+  if (progress <= 0.5) {
+    const stageProgress = progress / 0.5; // 0 → 1 within first half
+    imageToOverlay.style.transform = `translateY(${100 - stageProgress * 100}%)`; // 100% → 0%
+    overlayImg.style.transform = `translateY(100%)`; // keep hidden
+  }
+  // ---- Stage 2: Hold 5.1 at top, slide 5.2 over it ----
+  else {
+    imageToOverlay.style.transform = `translateY(0%)`; // fixed at top
+    const stageProgress = (progress - 0.5) / 0.5; // 0 → 1 within second half
+    overlayImg.style.transform = `translateY(${100 - stageProgress * 200}%)`; // 100% → 0%
+  }
 });
+/* =========================
+   END OF SERVICE SECTION LOGIC
+========================== */
+
 /* =========================
    END OF SERVICE SECTION LOGIC
 ========================== */
@@ -82,7 +95,7 @@ window.addEventListener("scroll", () => {
   const navRect = navbar.getBoundingClientRect();
   const sectionRect = imagesContainer.getBoundingClientRect();
 
-   // Navbar fully inside blue section
+  // Navbar fully inside blue section
   const isInside =
     navRect.top >= sectionRect.top && navRect.bottom <= sectionRect.bottom;
 
