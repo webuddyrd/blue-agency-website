@@ -457,18 +457,24 @@ p {
   gap: 80px;
 }
 
+.slider-brands a {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 120px;
+  margin-right: 20px;
+}
+
 .slider-brands img {
-  height: 80px;
+  height: 100%;
   margin-right: 40px;
   cursor: pointer;
+  width: 100%;
+  object-fit: contain;
 }
 
 .slider-brands img:hover {
   transform: scale(1.05);
 }
-/* =========================
-   END OF BRANDS SECTION
-========================== */
 
 @keyframes slide-left {
   0% {
@@ -476,9 +482,89 @@ p {
   }
 
   100% {
-    transform: translateX(calc(-185%));
+    transform: translateX(calc(-140%));
   }
 }
+/* =========================
+   END OF BRANDS SECTION
+========================== */
+
+/* =========================
+   CONTACT SECTION
+========================== */
+.contact-container {
+  display: flex;
+  align-items: center;
+}
+
+.team-image {
+  height: 100vh;
+}
+
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-left: 145px;
+}
+
+.form-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 12px 20px;
+  border: 1px solid #000;
+  border-radius: 9999px;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  border-radius: 20px;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.contact-form button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+}
+
+.social-icons {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+/* =========================
+   END OF CONTACT SECTION
+========================== */
 
 @keyframes fadeIn {
   from {
