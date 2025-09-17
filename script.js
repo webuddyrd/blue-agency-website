@@ -82,10 +82,6 @@ window.addEventListener("scroll", () => {
 ========================== */
 
 /* =========================
-   END OF SERVICE SECTION LOGIC
-========================== */
-
-/* =========================
    CHANGE STYLE ON USIMAGE SECTION
 ========================== */
 const navbar = document.getElementById("nav");
