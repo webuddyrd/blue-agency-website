@@ -187,7 +187,7 @@ body {
   position: relative;
   color: white;
   text-align: center;
-  padding: 0 1rem;
+  width: 100%;
 }
 
 .hero::before {
