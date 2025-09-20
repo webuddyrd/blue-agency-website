@@ -639,6 +639,27 @@ p {
   }
 
   /* =========================
+   US SECTION
+========================== */
+  .us.active .badge-effective {
+    bottom: 67%;
+    right: 18%;
+  }
+
+  .us.active .badge-realists {
+    top: 22%;
+  }
+
+  .us.active .badge-utils {
+    top: 7%;
+    right: 20%;
+  }
+
+  /* =========================
+   END OF US SECTION
+========================== */
+
+  /* =========================
    SERVICE SECTION
 ========================== */
   /* .content-wrapper {
@@ -679,6 +700,7 @@ p {
   .portfolio-content {
     gap: 80px;
   }
+
   /* =========================
    END OF PORTFOLIO SECTION
 ========================== */
@@ -689,6 +711,7 @@ p {
   .slider-brands {
     animation: slide-left 20s linear infinite;
   }
+
   /* =========================
    END OF BRANDS SECTION
 ========================== */
@@ -699,6 +722,7 @@ p {
   .contact-container {
     flex-direction: column;
   }
+
   .contact-right {
     margin: 0;
   }
@@ -712,6 +736,7 @@ p {
   .team-image {
     width: 100%;
   }
+
   /* =========================
    END OF CONTACT SECTION
 ========================== */
