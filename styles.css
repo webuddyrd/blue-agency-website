@@ -190,6 +190,14 @@ body {
   width: 100%;
 }
 
+.hero video {
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  /* fits screen height */
+  object-fit: cover;
+}
+
 .hero::before {
   content: "";
   position: absolute;
@@ -252,7 +260,6 @@ p {
   position: relative;
   color: white;
   text-align: center;
-  padding: 0 1rem;
 }
 
 .badge {
@@ -266,6 +273,10 @@ p {
 .badge.show {
   opacity: 1;
   transform: scale(1);
+}
+
+.us-background {
+  max-width: 100%;
 }
 
 .us.active .badge-effective {
@@ -288,7 +299,8 @@ p {
 }
 
 .us-second {
-  height: 100vh;
+  height: auto;
+  max-width: 100%;
   margin-top: 95px;
 }
 
@@ -486,6 +498,7 @@ p {
     transform: translateX(calc(-140%));
   }
 }
+
 /* =========================
    END OF BRANDS SECTION
 ========================== */
@@ -592,15 +605,13 @@ p {
   transform: translateY(0);
 }
 
-/* Responsive */
+/* =========================
+   RESPONSIVE
+========================== */
 @media (max-width: 768px) {
   .slider-row img {
     width: 100px;
     height: 50px;
-  }
-
-  section {
-    padding: 3rem 1rem;
   }
 
   .hamburger {
@@ -624,6 +635,65 @@ p {
     background: rgb(10, 15, 40, 0.85)
   }
 
+  /* =========================
+   US SECTION
+========================== */
+  .badge {
+    height: 40px;
+  }
+
+  .us.active .badge-effective {
+    bottom: 67%;
+  }
+
+  .us.active .badge-realists {
+    top: 22%;
+  }
+
+  .us.active .badge-utils {
+    top: 11%;
+    right: 23%;
+  }
+
+  /* =========================
+   END OF US SECTION
+========================== */
+
+  /* =========================
+   SERVICE SECTION
+========================== */
+  /* .content-wrapper {
+    height: 50vh;
+  } */
+
+  .content .img-5-1 {
+    width: 98%;
+  }
+
+  .content .img-5-2 {
+    width: 98%;
+  }
+
+  .services-slider-container {
+    height: 6vh;
+  }
+
+  .slider-services img {
+    height: 20px;
+  }
+
+  .to-know {
+    top: 5.7%;
+  }
+
+  .to-know img {
+    width: 140px;
+  }
+
+
+  /* =========================
+   END OF SERVICE SECTION
+========================== */
   @keyframes slideDown {
     from {
       opacity: 0;
