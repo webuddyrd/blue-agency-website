@@ -694,6 +694,16 @@ p {
   /* =========================
    END OF SERVICE SECTION
 ========================== */
+
+ /* =========================
+   PORTFOLIO SECTION
+========================== */
+.portfolio-content {
+  gap: 80px;
+}
+ /* =========================
+   END OF PORTFOLIO SECTION
+========================== */
   @keyframes slideDown {
     from {
       opacity: 0;
