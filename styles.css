@@ -19,15 +19,15 @@
 }
 
 @font-face {
-  font-family: 'Gotham Rounded';
-  src: url('fonts/gothamrnd_book.otf');
+  font-family: "Gotham Rounded";
+  src: url("fonts/gothamrnd_book.otf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gotham Rounded';
-  src: url('fonts/gothamrnd_bold.otf');
+  font-family: "Gotham Rounded";
+  src: url("fonts/gothamrnd_bold.otf");
   font-weight: bold;
   font-style: normal;
 }
@@ -43,7 +43,7 @@ body {
   line-height: 1.6;
   scroll-behavior: smooth;
   transition: background-color 0.4s ease, color 0.4s ease;
-  font-family: 'Gotham Rounded';
+  font-family: "Gotham Rounded";
   overflow-x: hidden;
 }
 
@@ -226,7 +226,7 @@ section {
 h2 {
   max-width: 1100px;
   margin: 0 auto 1rem auto;
-  font-family: 'Gotham Rounded';
+  font-family: "Gotham Rounded";
   font-weight: 800;
   font-size: 2.5rem;
   text-transform: uppercase;
@@ -268,6 +268,7 @@ p {
   opacity: 0;
   transform: scale(0.8);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  height: 7%;
 }
 
 .badge.show {
@@ -280,20 +281,22 @@ p {
 }
 
 .us.active .badge-effective {
-  bottom: 61%;
-  right: 22%;
+  bottom: 63%;
+  right: 21%;
   transition-delay: 1s;
 }
 
 .us.active .badge-realists {
-  top: 26%;
-  left: 15%;
+  height: 6%;
+  top: 24%;
+  left: 9%;
   transition-delay: 3s;
 }
 
 .us.active .badge-utils {
-  top: 10%;
-  right: 20%;
+  height: 10%;
+  top: 9%;
+  right: 21%;
   transform: rotate(5deg);
   transition-delay: 2s;
 }
@@ -439,6 +442,10 @@ p {
   display: flex;
 }
 
+.portfolio-video {
+  width: 100%;
+}
+
 /* =========================
    END OF PORTFOLIO SECTION
 ========================== */
@@ -454,7 +461,8 @@ p {
 }
 
 .brands-header {
-  margin: 100px auto;
+  width: 100%;
+  padding: 10%;
 }
 
 .brands-slider-container {
@@ -467,21 +475,16 @@ p {
   display: flex;
   width: calc(200%);
   animation: slide-left 50s linear infinite;
-  gap: 80px;
 }
 
 .slider-brands a {
   flex: 0 0 auto;
-  width: 200px;
-  height: 120px;
-  margin-right: 20px;
 }
 
 .slider-brands img {
-  height: 100%;
-  margin-right: 40px;
+  height: 50%;
   cursor: pointer;
-  width: 100%;
+  width: 70%;
   object-fit: contain;
 }
 
@@ -632,32 +635,8 @@ p {
   .nav-links.show {
     display: flex;
     animation: slideDown 0.3s ease-out;
-    background: rgb(10, 15, 40, 0.85)
+    background: rgb(10, 15, 40, 0.85);
   }
-
-  /* =========================
-   US SECTION
-========================== */
-  .badge {
-    height: 40px;
-  }
-
-  .us.active .badge-effective {
-    bottom: 67%;
-  }
-
-  .us.active .badge-realists {
-    top: 22%;
-  }
-
-  .us.active .badge-utils {
-    top: 11%;
-    right: 23%;
-  }
-
-  /* =========================
-   END OF US SECTION
-========================== */
 
   /* =========================
    SERVICE SECTION
@@ -690,19 +669,51 @@ p {
     width: 200px;
   }
 
-
   /* =========================
    END OF SERVICE SECTION
 ========================== */
 
- /* =========================
+  /* =========================
    PORTFOLIO SECTION
 ========================== */
-.portfolio-content {
-  gap: 80px;
-}
- /* =========================
+  .portfolio-content {
+    gap: 80px;
+  }
+  /* =========================
    END OF PORTFOLIO SECTION
+========================== */
+
+  /* =========================
+   BRANDS SECTION
+========================== */
+  .slider-brands {
+    animation: slide-left 20s linear infinite;
+  }
+  /* =========================
+   END OF BRANDS SECTION
+========================== */
+
+  /* =========================
+   CONTACT SECTION
+========================== */
+  .contact-container {
+    flex-direction: column;
+  }
+  .contact-right {
+    margin: 0;
+  }
+
+  .social-icons {
+    position: relative;
+    transform: none;
+    flex-direction: row;
+  }
+
+  .team-image {
+    width: 100%;
+  }
+  /* =========================
+   END OF CONTACT SECTION
 ========================== */
   @keyframes slideDown {
     from {
