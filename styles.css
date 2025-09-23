@@ -48,50 +48,6 @@ body {
 }
 
 /* =========================
-   HEADER & AND NAVIGATION
-========================== */
-.site-header.overlay {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: transparent;
-  box-shadow: none;
-  z-index: 1000;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0 0 2rem;
-}
-
-.nav-links {
-  color: black;
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  padding: 1.5rem 2rem;
-  border-bottom-left-radius: 18px;
-  border-top-left-radius: 18px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  font-size: 24px;
-  color: black;
-}
-
-.nav-links.contrast a {
-  color: white;
-}
-
-/* =========================
-   END OF HEADER & NAVIGATION
-========================== */
-
-/* =========================
    FOOTER & SOCIAL LINKS
 ========================== */
 .copyright {

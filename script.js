@@ -6,13 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, { threshold: 0.12 });
   fadeIns.forEach((el) => fadeObserver.observe(el));
-
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.querySelector(".nav-links");
-  if (hamburger && navLinks) {
-    hamburger.addEventListener("click", () => navLinks.classList.toggle("show"));
-  }
-
+  
   const heroVideo = document.getElementById("hero-video");
   const heroFlag = document.getElementById("hero-flag");
 
