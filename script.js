@@ -76,30 +76,6 @@ window.addEventListener("scroll", () => {
 ========================== */
 
 /* =========================
-   CHANGE STYLE ON USIMAGE SECTION
-========================== */
-const navbar = document.getElementById("nav");
-const imagesContainer = document.getElementById("usImages");
-
-window.addEventListener("scroll", () => {
-  const navRect = navbar.getBoundingClientRect();
-  const sectionRect = imagesContainer.getBoundingClientRect();
-
-  // Navbar fully inside blue section
-  const isInside =
-    navRect.top >= sectionRect.top && navRect.bottom <= sectionRect.bottom;
-
-  if (isInside) {
-    navbar.classList.add("contrast");   // white text
-  } else {
-    navbar.classList.remove("contrast"); // black text
-  }
-});
-/* =========================
-   END OF CHANGE STYLE ON USIMAGE SECTION
-========================== */
-
-/* =========================
    SEND MAIL FUNCTION
 ========================== */
 document.getElementById("contact-form").addEventListener("submit", async (e) => {
