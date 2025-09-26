@@ -39,43 +39,6 @@ usSectionObserver.observe(usSection);
 ========================== */
 
 /* =========================
-   SERVICE SECTION LOGIC
-========================== */
-const wrapper = document.getElementById("services");
-const overlayImg = document.getElementById("overlayImg");
-const imageToOverlay = document.getElementById("imageToOverlay");
-
-window.addEventListener("scroll", () => {
-  const windowHeight = window.innerHeight + 150;
-  const wrapperTop = wrapper.offsetTop;
-  const wrapperHeight = wrapper.offsetHeight;
-
-  // Scroll distance inside wrapper
-  let scrollInside = window.scrollY - wrapperTop;
-  let maxScroll = wrapperHeight - windowHeight;
-  scrollInside = Math.min(Math.max(scrollInside, 0), maxScroll);
-
-  // Normalize progress 0 → 1
-  let progress = scrollInside / maxScroll;
-
-  // ---- Stage 1: Move 5.1 upward until it sticks ----
-  if (progress <= 0.5) {
-    const stageProgress = progress / 0.5; // 0 → 1 within first half
-    imageToOverlay.style.transform = `translateY(${100 - stageProgress * 100}%)`; // 100% → 0%
-    overlayImg.style.transform = `translateY(100%)`; // keep hidden
-  }
-  // ---- Stage 2: Hold 5.1 at top, slide 5.2 over it ----
-  else {
-    imageToOverlay.style.transform = `translateY(0%)`; // fixed at top
-    const stageProgress = (progress - 0.5) / 0.5; // 0 → 1 within second half
-    overlayImg.style.transform = `translateY(${100 - stageProgress * 200}%)`; // 100% → 0%
-  }
-});
-/* =========================
-   END OF SERVICE SECTION LOGIC
-========================== */
-
-/* =========================
    SEND MAIL FUNCTION
 ========================== */
 document.getElementById("contact-form").addEventListener("submit", async (e) => {

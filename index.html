@@ -13,6 +13,8 @@
   <script defer src="script.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
   </script>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
   <script type="text/javascript">
     (function () {
       emailjs.init({
@@ -47,26 +49,36 @@
   <!-- END OF US SECTION -->
 
   <!-- SERVICES SECTION -->
-  <div id="services" class="content-wrapper">
-    <div id="servicesContent" class="content">
-      <div class="services-slider-container">
-        <div class="slider-services top-row">
-          <img src="images/5.0Services.png" alt="Nuestros servicios">
-          <img src="images/5.0Services.png" alt="Nuestros servicios">
+  <div>
+    <div id="services">
+      <div id="servicesContent" class="content">
+        <div class="services-slider-container">
+          <div class="slider-services top-row">
+            <img src="images/5.0Services.png" alt="Nuestros servicios">
+            <img src="images/5.0Services.png" alt="Nuestros servicios">
+          </div>
+          <div class="slider-services bottom-row">
+            <img src="images/5.0Services.png" alt="Nuestros servicios">
+            <img src="images/5.0Services.png" alt="Nuestros servicios">
+          </div>
         </div>
-        <div class="slider-services bottom-row">
-          <img src="images/5.0Services.png" alt="Nuestros servicios">
-          <img src="images/5.0Services.png" alt="Nuestros servicios">
+        <div class="to-know">
+          <img src="images/5.0ToKnow.png" alt="Lo que debes saber">
         </div>
       </div>
-      <div class="to-know">
-        <img src="images/5.0ToKnow.png" alt="Lo que debes saber">
-      </div>
-      <div class="services-images-container">
-        <img id="imageToOverlay" src="images/5.1.png" alt="Servicios parte 1" class="img-5-1">
-        <img id="overlayImg" src="images/5.2.png" alt="Servicios parte 2" class="img-5-2">
+      <div class="relative">
+        <div class="sticky top-0  flex flex-col items-center justify-center">
+        </div>
+        <div class="sticky top-0  flex flex-col items-center justify-center">
+          <img src="images/5.1.png" class="services-images">
+        </div>
+        <div class="sticky top-0  flex flex-col items-center justify-center">
+          <img src="images/5.2.png" class="services-images">
+
+        </div>
       </div>
     </div>
+
   </div>
   <!-- END OF SERVICES SECTION -->
 
