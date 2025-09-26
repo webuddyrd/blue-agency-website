@@ -588,6 +588,12 @@ p {
   /* =========================
    SERVICE SECTION
 ========================== */
+.content {
+  top: 20px;
+  height: 68vh;
+  padding-top: 0;
+}
+
   .content img {
     padding: 0 15px;
     max-width: none;
@@ -610,6 +616,7 @@ p {
   }
 
   .services-images {
+    margin-top: 30%;
     height: auto;
 
   }
