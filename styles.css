@@ -632,8 +632,18 @@ p {
   /* =========================
    BRANDS SECTION
 ========================== */
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-630%));
+  }
+}
+
   .slider-brands {
-    animation: slide-left 20s linear infinite;
+    animation: slide-left 35s linear infinite;
   }
 
   /* =========================
