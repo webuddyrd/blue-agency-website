@@ -348,7 +348,7 @@ p {
 .content {
   position: sticky;
   top: 100px;
-  height: 100vh;
+  height: 85vh;
   overflow: hidden;
   padding-top: 20px;
 }
@@ -590,7 +590,7 @@ p {
 ========================== */
 .content {
   top: 20px;
-  height: 68vh;
+  height: 40vh;
   padding-top: 0;
 }
 
@@ -608,7 +608,7 @@ p {
   }
 
   .to-know {
-    top: 7%;
+    top: 12%;
   }
 
   .to-know img {
