@@ -82,3 +82,22 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
 /* =========================
    END OF SEND MAIL FUNCTION
 ========================== */
+
+/* =========================
+   OPEN PRIVACY POLICY MODAL FUNCTION
+========================== */
+  const modal = document.getElementById('privacyModal');
+  const openBtn = document.getElementById('openPrivacyBtn');
+  const closeBtn = document.getElementById('closeModal');
+  const acceptBtn = document.getElementById('acceptPolicyBtn');
+
+  openBtn.onclick = () => modal.style.display = 'block';
+  closeBtn.onclick = () => modal.style.display = 'none';
+  acceptBtn.onclick = () => modal.style.display = 'none';
+
+  window.onclick = (event) => {
+    if (event.target === modal) modal.style.display = 'none';
+  };
+/* =========================
+   END OF OPEN PRIVACY POLICY MODAL FUNCTION
+========================== */
